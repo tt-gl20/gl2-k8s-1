@@ -3,7 +3,7 @@
 https://asciinema.org/a/367107
 
 ## commands:
-'''
+```
  docker pull busybox
  docker run busybox
  docker ps -a
@@ -27,16 +27,16 @@ https://asciinema.org/a/367107
  sudo ip netns exec runc ip route add default via 192.168.10.1
  
  sudo runc run demo
-'''
+```
 
 in other terminal session:
-'''
+```
 curl 192.168.10.101:8000
-'''
+```
 
 
 ## content of config.json (parts)
-'''
+```
       {
         "ociVersion": "1.0.1-dev",
         "process": {
@@ -48,20 +48,20 @@ curl 192.168.10.101:8000
                 "args": [
                         "sh","-c","while true ; do  echo -e 'HTTP/1.1 200 OK\n\n  tim  task V1.0' | nc -v -l -p 8000  ; done"
                 ],
-'''
+```
 
-'''
+```
  "root": {
                 "path": "rootfs",
                 "readonly": false
             }
-'''
+```
 
-'''
+```
  {
       "type": "network",
       "path": "/var/run/netns/runc"
   },
 
-'''
+```
 
